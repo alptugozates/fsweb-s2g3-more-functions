@@ -16,9 +16,17 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul(dosyaYolu) {
+  if(!dosyaYolu) {
+    return "";
+  }
+   const dosyaYoluParcalari = dosyaYolu.split("/");
+  const dosyaAdi = dosyaYoluParcalari[dosyaYoluParcalari.length - 1];
+  return dosyaAdi;
 }
+  console.log(dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
+  console.log(dosyaAdiniBul("Beethoven_5.mp3"));
+  console.log(dosyaAdiniBul(""));
 
 /*
   GÖREV 2
@@ -38,9 +46,19 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
-}
+function ortalamaBul(sayiArray) {
+  if(sayiArray.length === 0) {
+    return null;
+  }
+    let toplam = 0;
+    for (let i = 0; i < sayiArray.length; i++) {
+      toplam += sayiArray[i];
+    }
+    const ortalama = toplam / sayiArray.length;
+    console.log(ortalama);
+    return ortalama;
+} 
+  
 
 /*
   GÖREV 3
@@ -62,9 +80,17 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
-}
+function ortalamadanBuyukleriBul(sayiArray, ortalamaBul) {
+  if (sayiArray.length === 0) {
+    return null;
+  }
+    const ortalama = ortalamaBul(sayiArray);
+    const buyukOlanlar = sayiArray.filter(sayi => sayi >= ortalama);
+    return buyukOlanlar;
+  } 
+   
+
+
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
